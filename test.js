@@ -13,6 +13,13 @@ describe('The Caesar cipher', () => {
       encrypt(123).should.equal('456');
     });
 
+    it('should accept an optional "shift" parameter', () => {
+      encrypt('foo', 7).should.equal('mvv');
+      encrypt('abc', 7).should.equal('hij');
+      encrypt('yyy', 7).should.equal('555');
+      encrypt(123, 7).should.equal('89a');
+    });
+
     it('should not attempt to encrypt non-alphanumeric characters');
     it('should return a blank string when given a blank string');
     it('should return a blank string when given a non-string or numeric value');
