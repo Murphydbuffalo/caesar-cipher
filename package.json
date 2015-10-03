@@ -1,0 +1,15 @@
+{
+  "name": "drug-dev-coding-exercise",
+  "version": "1.0.0",
+  "description": "Implementing a Caesar cipher.",
+  "main": "cipher.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test.js"
+  },
+  "author": "Dan Murphy",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3"
+  }
+}
