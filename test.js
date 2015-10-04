@@ -20,6 +20,10 @@ describe('The Caesar cipher', () => {
       encrypt('123', 7).should.equal('89a');
     });
 
+    it('should handle upper case letters', () => {
+      encrypt('Foo').should.equal('Irr');
+    });
+
     it('should not attempt to encrypt non-alphanumeric characters', () => {
       encrypt('foo!').should.equal('irr!');
       encrypt('ab?c').should.equal('de?f');

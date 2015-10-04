@@ -36,9 +36,13 @@ exports.encrypt = function encrypt(input, shift) {
   const shiftedCharacters = shiftAlphabet(shift);
 
   const encryptedString = input.split('').reduce((result, character) => {
-    const encryptedChar = (isAlphaNumeric(character) ? mapOfCharacters[character] : character);
+    const key = character.toLowerCase();
+    const encryptedCharacter = isAlphaNumeric(character) ? shiftedCharacters[key] : character;
 
-    return result + encryptedChar;
+    const upperCaseChar = encryptedCharacter.toUpperCase();
+    const formattedCharacter = isUpperCase(character) ? upperCaseChar : encryptedCharacter;
+
+    return result + formattedCharacter;
   }, '');
 
   return encryptedString;
