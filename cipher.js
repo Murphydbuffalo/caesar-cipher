@@ -28,7 +28,7 @@ function shiftAlphabet(shift) {
   }, {});
 }
 
-exports.encrypt = function encrypt(input, shift) {
+module.exports = function cipher(input, shift) {
   if(!isString(input)) return '';
 
   shift = (shift == null ? 3 : shift);
