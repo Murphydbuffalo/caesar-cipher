@@ -1,13 +1,19 @@
 const alphabet = '0123456789abcdefghijklmnopqrstuvwxyz'.split('');
-const isAlphaNumeric = string => (/[a-z0-9]/i).test(string);
-const isString = input => typeof input === 'string';
 
-exports.encrypt = function encrypt(input, shift) {
-  if(!isString(input)) return '';
+function isAlphaNumeric(string){
+  return (/[a-z0-9]/i).test(string);
+}
 
-  shift = (shift == null ? 3 : shift);
+function isString(input) {
+ return typeof input === 'string';
+}
 
-  const mapOfCharacters = alphabet.reduce((map, char, index, array) => {
+function isUpperCase(string) {
+  return string.toLowerCase() !== string;
+}
+
+function shiftAlphabet(shift) {
+  return alphabet.reduce((map, char, index, array) => {
     const maxIndex = alphabet.length - 1;
     const totalIndex = index + shift;
 
@@ -20,6 +26,14 @@ exports.encrypt = function encrypt(input, shift) {
 
     return map;
   }, {});
+}
+
+exports.encrypt = function encrypt(input, shift) {
+  if(!isString(input)) return '';
+
+  shift = (shift == null ? 3 : shift);
+
+  const shiftedCharacters = shiftAlphabet(shift);
 
   const encryptedString = input.split('').reduce((result, character) => {
     const encryptedChar = (isAlphaNumeric(character) ? mapOfCharacters[character] : character);
