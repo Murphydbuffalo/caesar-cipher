@@ -1,4 +1,5 @@
 # Dan's Caesar Cipher - For the lovely people at **DrugDev**
+![Julius Caesar](http://fearlessmen.com/wp-content/uploads/2012/11/Emperor-Julius-Caesar.jpg)
 
 ## The exercise
 
