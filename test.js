@@ -20,6 +20,10 @@ describe('The Caesar cipher', () => {
       cipher('123', 7).should.equal('89a');
     });
 
+    it('should decrypt a string by shifting through the remainder of the alphabet', () => {
+      cipher(cipher('abc', 31), 31).should.equal('abc');
+    });
+
     it('should handle upper case letters', () => {
       cipher('Foo').should.equal('Irr');
     });
