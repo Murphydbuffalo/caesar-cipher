@@ -2,6 +2,7 @@
   "name": "drug-dev-coding-exercise",
   "version": "1.0.0",
   "description": "Implementing a Caesar cipher.",
+  "repository": "https://github.com/Murphydbuffalo/caesar-cipher",
   "main": "cipher.js",
   "scripts": {
     "test": "node_modules/mocha/bin/mocha test.js"
