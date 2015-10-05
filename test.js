@@ -9,14 +9,14 @@ describe('The Caesar cipher', () => {
     it('should return an encrypted string when given alphanumeric characters', () => {
       cipher('foo').should.equal('irr');
       cipher('abc').should.equal('def');
-      cipher('zzz').should.equal('222');
+      cipher('zzz').should.equal('CCC');
       cipher('123').should.equal('456');
     });
 
     it('should accept an optional "shift" parameter', () => {
       cipher('foo', 7).should.equal('mvv');
       cipher('abc', 7).should.equal('hij');
-      cipher('yyy', 7).should.equal('555');
+      cipher('yyy', 7).should.equal('FFF');
       cipher('123', 7).should.equal('89a');
     });
 

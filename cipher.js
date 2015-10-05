@@ -1,4 +1,4 @@
-const alphabet = '0123456789abcdefghijklmnopqrstuvwxyz'.split('');
+const alphabet = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
 function isAlphaNumeric(string){
   return (/[a-z0-9]/i).test(string);
@@ -6,10 +6,6 @@ function isAlphaNumeric(string){
 
 function isString(input) {
  return typeof input === 'string';
-}
-
-function isUpperCase(string) {
-  return string.toLowerCase() !== string;
 }
 
 function shiftAlphabet(shift) {
@@ -35,14 +31,10 @@ module.exports = function cipher(input, shift) {
 
   const shiftedCharacters = shiftAlphabet(shift);
 
-  const encryptedString = input.split('').reduce((result, character) => {
-    const key = character.toLowerCase();
-    const encryptedCharacter = isAlphaNumeric(character) ? shiftedCharacters[key] : character;
+  const encryptedString = input.split('').reduce((result, char) => {
+    const encryptedCharacter = isAlphaNumeric(char) ? shiftedCharacters[char] : char;
 
-    const upperCaseChar = encryptedCharacter.toUpperCase();
-    const formattedCharacter = isUpperCase(character) ? upperCaseChar : encryptedCharacter;
-
-    return result + formattedCharacter;
+    return result + encryptedCharacter;
   }, '');
 
   return encryptedString;
